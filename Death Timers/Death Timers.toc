@@ -1,0 +1,6 @@
+## Interface: 80000
+## Title: Death Timers
+## Notes: This addon displays the time left until a target dies based on group DPS.
+## Author: Toasty
+
+Death Timers.lua
