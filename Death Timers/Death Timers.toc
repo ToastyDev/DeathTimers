@@ -6,4 +6,6 @@
 
 ## DefaultState: enabled
 
+DeathTimers.enUS.lua
 DeathTimers.lua
+DeathTimers.xml
