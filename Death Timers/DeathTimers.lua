@@ -5,6 +5,7 @@ local endTime = 0
 local totalElapsedTime = 0
 local timeLeft = 0
 local totalDPS = 0
+local tHealth = 0
 
 function DeathTimers_OnLoad(frame)
   frame:RegisterEvent("ADDON_LOADED")
@@ -29,6 +30,15 @@ function DeathTimers_OnEvent(self, event, ...)
     print("Death Timers - No Combat")
     endTime = GetTime()
   end
+end
+
+function GetTargetHealth()
+  tHealth = math.max(0, UnitHealth("target") / math.max(1, UnitHealthMax("target")) * 100)
+  tHealth = string.format("%.1f", p)
+end
+
+function GetDPS()
+  
 end
 
 function DeathTimers_OnUpdate(self, elapsedTime)
