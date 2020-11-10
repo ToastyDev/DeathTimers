@@ -1,4 +1,4 @@
-## Interface: 80100
+## Interface: 90001
 ## Title: |cffff4500Death Timers|r
 ## Notes: This addon displays the time left until a target dies based on group DPS.
 ## Author: Toasty

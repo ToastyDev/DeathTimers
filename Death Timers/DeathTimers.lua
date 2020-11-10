@@ -6,6 +6,7 @@ local totalElapsedTime = 0
 local timeLeft = 0
 local totalDPS = 0
 local tHealth = 0
+local oldTHealth;
 
 function DeathTimers_OnLoad(frame)
   frame:RegisterEvent("ADDON_LOADED")
@@ -25,6 +26,7 @@ function DeathTimers_OnEvent(self, event, ...)
     print("Death Timers - Combat")
     combatTime = GetTime()
     TimerText_Update(combatTime)
+    tHealth = UnitHealth("target")
 
   elseif event == "PLAYER_REGEN_ENABLED" then
     print("Death Timers - No Combat")
@@ -38,7 +40,7 @@ function GetTargetHealth()
 end
 
 function GetDPS()
-  
+
 end
 
 function DeathTimers_OnUpdate(self, elapsedTime)
@@ -47,6 +49,13 @@ end
 
 function CombatTimeText_Update()
   DTFrameTimeLeft:SetText("Kill in: ")
+  if oldTHealth ~= tHealth then
+    oldTHealth = tHealth
+    -- If max health, set temp Texture
+    if health == UnitHealthMax("target") then
+      -- do things
+    end
+
 end
 
 function DPSText_Update()
